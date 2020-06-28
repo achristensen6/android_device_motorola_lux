@@ -86,7 +86,6 @@ service lux-config-sh /vendor/bin/init.device.config.sh
     class core
     user root
     oneshot
-    disabled
 
 on property:ro.device.dualsim=true
     setprop ro.telephony.default_network "9,1"
@@ -100,9 +99,9 @@ on property:ro.device.dualsim=false
     setprop persist.radio.multisim.config ""
 
 on property:sys.boot_completed=1
-    setprop sys.io.scheduler fiops
+    setprop sys.io.scheduler cfq
 
-    write /sys/module/lpm_levels/parameters/sleep_disabled 0
+    write /sys/module/lpm_levels/parameters/sleep_disabled 1
     write /sys/devices/system/cpu/cpu0/online 1
 
     # HMP scheduler (big.Little cluster related) settings
@@ -133,7 +132,7 @@ on property:sys.boot_completed=1
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 81250
 
-    write /sys/module/msm_thermal/core_control/enabled 0
+    write /sys/module/msm_thermal/core_control/enabled 1
 
     # disable bcl hotplug to switch governor
     write /sys/devices/soc.0/qcom,bcl.16/mode "disable"
