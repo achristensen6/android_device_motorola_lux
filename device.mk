@@ -22,41 +22,41 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_l_mr1.mk
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
+PRODUCT_COPY_FILES +=
+    $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml
     $(LOCAL_PATH)/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 # Camera
-PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES +=
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml
 
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES +=
     libshims_sensorlistener
 
 # Media
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    $(LOCAL_PATH)/configs/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
+PRODUCT_COPY_FILES +=
+    $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
     $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
 # NFC
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
+PRODUCT_COPY_FILES +=
+    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
 
-PRODUCT_COPY_FILES += \
-    device/motorola/lux/configs/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
+PRODUCT_COPY_FILES +=
+    device/motorola/lux/configs/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
     device/motorola/lux/configs/libnfc-nci-20795a20.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci-20795a20.conf
 
-PRODUCT_PACKAGES += \
-    libnfc \
-    libnfc_jni \
-    android.hardware.nfc@1.0-impl-bcm \
-    android.hardware.nfc@1.0-service \
-    nfc_nci.bcm2079x.default \
-    NfcNci \
-    Tag \
+PRODUCT_PACKAGES +=
+    libnfc
+    libnfc_jni
+    android.hardware.nfc@1.0-impl-bcm
+    android.hardware.nfc@1.0-service
+    nfc_nci.bcm2079x.default
+    NfcNci
+    Tag
     com.android.nfc_extras
 
 # Overlay
@@ -66,17 +66,17 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 $(call inherit-product, device/motorola/lux/system_prop.mk)
 
 # Ramdisk
-PRODUCT_PACKAGES += \
-    init.device.config.sh \
+PRODUCT_PACKAGES +=
+    init.device.config.sh
     init.target.rc
 
 # Sensors
-PRODUCT_PACKAGES += \
-    akmd09912 \
-    stml0xx \
-    sensors.msm8916 \
+PRODUCT_PACKAGES +=
+    akmd09912
+    stml0xx
+    sensors.msm8916 
     sensorhub.msm8916
 
 # Thermal
-PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES +=
      $(LOCAL_PATH)/configs/thermal-engine-lux.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-lux.conf
